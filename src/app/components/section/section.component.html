@@ -1,0 +1,12 @@
+<div [id]="this.itemTitle" class="section">
+  <mat-card class="{{ this.isEven ? 'bg-1' : 'bg-2' }}">
+    @if(this.isLoading) {
+      <mat-card-content>
+        <mat-spinner></mat-spinner>
+      </mat-card-content>
+    }@else {
+      <mat-card-title>{{this.itemTitle}}</mat-card-title>
+      <mat-card-content [ngStyle]="{'height.px': this.heighRand}">[---------------------]</mat-card-content>
+    }
+  </mat-card>
+</div>
