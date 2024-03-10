@@ -1,0 +1,14 @@
+<div class="side-menu">
+  <mat-nav-list role="list">
+    @for(item of this.menuItems; track item) {
+      <a mat-list-item [routerLink]="[]" [fragment]="item.category">
+        {{item.category}}
+      </a>
+      @for(item of item.items; track item) {
+        <a mat-list-item [routerLink]="[]" [fragment]="item.title">
+          {{item.title}}
+        </a>
+      }
+    }
+  </mat-nav-list>
+</div>
