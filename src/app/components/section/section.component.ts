@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { RandomService } from '../../core/services/random.service';
+import { RandomService } from '../../core/services/random/random.service';
 import { CommonModule } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';

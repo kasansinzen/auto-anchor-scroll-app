@@ -24,13 +24,9 @@ export class SideMenuComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.menuService.setMenuItems(5);
     this.menuService.getMenuItems().subscribe(menuItems => {
       this.menuItems = menuItems;
     });
-  }
-
-  handleClickAnchor(id: string) {
-    this.scroll.scrollToAnchor(id);
+    this.menuService.setMenuItems(5);
   }
 }

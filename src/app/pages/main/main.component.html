@@ -1,4 +1,4 @@
-<div class="main" appHeightSpy (heightIncreased)="this.onHeightPageIncrease($event)">
+<div class="main" appHeightSpy (heightIncreased)="this.onHeightPageIncrease()">
   @for(category of this.menuItems | async; track category; let key = $index) {
     <app-section [itemId]="key + 1" [itemTitle]="category.category"></app-section>
     @for(item of category.items; track item; let key2 = $index) {

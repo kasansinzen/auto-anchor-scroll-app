@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { RandomService } from '../random.service';
+import { RandomService } from '../random/random.service';
 import { Observable, Subject, delay, of } from 'rxjs';
 
 export interface Item {
