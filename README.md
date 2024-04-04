@@ -10,12 +10,19 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The appli
 
 ### Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-Run `ng test --no-watch --code-coverage` to excute report coverage results without browser open.
+Run `npm run test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Run `npm run test:coverage` to excute unit tests report coverage results without browser open.
+Run `npm run test:ci` to excute for unit tests continues integration.
 
 ### Running ESLint
 
-Run `ng lint` to check code is pass linting via [ESLint](https://eslint.org/).
+Run `npm run lint` to check code is pass linting via [ESLint](https://eslint.org/).
+Run `npm run lint:fix` automatic fix ESLint required.
+
+### Running Stylelint
+
+Run `npm run stylelint` to check code is pass stylelint via [Stylelint](https://stylelint.io/).
+Run `npm run stylelint:fix` automatic fix stylelint required.
 
 ### Running Build
 
@@ -44,6 +51,7 @@ auto-anchor-scroll-app/
 3. Install dependencies: Install all depencies in package.json
 4. Build application: Compile the code and resolve dependencies.
 5. ESLint and Prettierrc: Check code quality is pass lintting and .prettierrc
-6. Unit Test: Execute various tests to ensure code correctness.
+6. Stylelint: Check code quality is pass stylelint
+7. Unit Test: Execute various tests to ensure code correctness.
 
 These stages ensure a systematic and efficient build and test process in the CI pipeline.
