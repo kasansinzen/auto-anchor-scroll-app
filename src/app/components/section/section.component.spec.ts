@@ -3,48 +3,47 @@ import { ComponentFixture, TestBed, fakeAsync, tick } from '@angular/core/testin
 import { SectionComponent } from './section.component';
 
 describe('SectionComponent', () => {
-  let component: SectionComponent;
-  let fixture: ComponentFixture<SectionComponent>;
+	let component: SectionComponent;
+	let fixture: ComponentFixture<SectionComponent>;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [SectionComponent]
-    })
-    .compileComponents();
-    
-    fixture = TestBed.createComponent(SectionComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+	beforeEach(async () => {
+		await TestBed.configureTestingModule({
+			imports: [SectionComponent],
+		}).compileComponents();
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+		fixture = TestBed.createComponent(SectionComponent);
+		component = fixture.componentInstance;
+		fixture.detectChanges();
+	});
 
-  describe('[method] ngOnInit', () => {
-    it('should initial state corectly', () => {
-      component.ngOnInit();
+	it('should create', () => {
+		expect(component).toBeTruthy();
+	});
 
-      expect(component.isLoading).toBeTrue();
-      expect(component.heighRand).toBeGreaterThanOrEqual(100);
-      expect(component.heighRand).toBeLessThanOrEqual(1000);
-      expect(component.isEven).toBeFalse();
-    });
+	describe('[method] ngOnInit', () => {
+		it('should initial state corectly', () => {
+			component.ngOnInit();
 
-    it('should isEvent equal true when itemId % 2', () => {
-      component.itemId = 2;
-      component.ngOnInit();
-      fixture.detectChanges();
+			expect(component.isLoading).toBeTrue();
+			expect(component.heighRand).toBeGreaterThanOrEqual(100);
+			expect(component.heighRand).toBeLessThanOrEqual(1000);
+			expect(component.isEven).toBeFalse();
+		});
 
-      expect(component.isEven).toBeTrue();
-    });
+		it('should isEvent equal true when itemId % 2', () => {
+			component.itemId = 2;
+			component.ngOnInit();
+			fixture.detectChanges();
 
-    it('should set isLoading to false after delay', fakeAsync(() => {
-      component.ngOnInit();
+			expect(component.isEven).toBeTrue();
+		});
 
-      expect(component.isLoading).toBeTrue();
-      tick(3000);
-      expect(component.isLoading).toBeFalse();
-    }));
-  });
+		it('should set isLoading to false after delay', fakeAsync(() => {
+			component.ngOnInit();
+
+			expect(component.isLoading).toBeTrue();
+			tick(3000);
+			expect(component.isLoading).toBeFalse();
+		}));
+	});
 });

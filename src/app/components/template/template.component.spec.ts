@@ -4,24 +4,20 @@ import { TemplateComponent } from './template.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('TemplateComponent', () => {
-  let component: TemplateComponent;
-  let fixture: ComponentFixture<TemplateComponent>;
+	let component: TemplateComponent;
+	let fixture: ComponentFixture<TemplateComponent>;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [
-        TemplateComponent,
-        BrowserAnimationsModule
-      ]
-    })
-    .compileComponents();
-    
-    fixture = TestBed.createComponent(TemplateComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+	beforeEach(async () => {
+		await TestBed.configureTestingModule({
+			imports: [TemplateComponent, BrowserAnimationsModule],
+		}).compileComponents();
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+		fixture = TestBed.createComponent(TemplateComponent);
+		component = fixture.componentInstance;
+		fixture.detectChanges();
+	});
+
+	it('should create', () => {
+		expect(component).toBeTruthy();
+	});
 });

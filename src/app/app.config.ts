@@ -5,12 +5,16 @@ import { routes } from './app.routes';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 export const appConfig: ApplicationConfig = {
-  providers: [provideRouter(routes, 
-    withInMemoryScrolling({
-      // anchorScrolling: 'enabled',
-    }),
-    withRouterConfig({
-      // onSameUrlNavigation: 'reload'
-    })
-  ), provideAnimationsAsync()]
+	providers: [
+		provideRouter(
+			routes,
+			withInMemoryScrolling({
+				// anchorScrolling: 'enabled',
+			}),
+			withRouterConfig({
+				// onSameUrlNavigation: 'reload'
+			}),
+		),
+		provideAnimationsAsync(),
+	],
 };

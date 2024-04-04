@@ -3,39 +3,38 @@ import { ComponentFixture, TestBed, fakeAsync, tick } from '@angular/core/testin
 import { SideMenuComponent } from './side-menu.component';
 
 describe('SideMenuComponent', () => {
-  let component: SideMenuComponent;
-  let fixture: ComponentFixture<SideMenuComponent>;
+	let component: SideMenuComponent;
+	let fixture: ComponentFixture<SideMenuComponent>;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [SideMenuComponent]
-    })
-    .compileComponents();
-    
-    fixture = TestBed.createComponent(SideMenuComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+	beforeEach(async () => {
+		await TestBed.configureTestingModule({
+			imports: [SideMenuComponent],
+		}).compileComponents();
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+		fixture = TestBed.createComponent(SideMenuComponent);
+		component = fixture.componentInstance;
+		fixture.detectChanges();
+	});
 
-  describe('[method] ngOnInit', () => {
-    it('should intitial state correctly', () => {
-      component.ngOnInit();
+	it('should create', () => {
+		expect(component).toBeTruthy();
+	});
 
-      expect(component.menuItems).toEqual([]);
-    });
+	describe('[method] ngOnInit', () => {
+		it('should intitial state correctly', () => {
+			component.ngOnInit();
 
-    it('should get menu items when setMenuItems complete', fakeAsync(() => {
-      component.ngOnInit();
-      tick();
-      
-      expect(component.menuItems.length).toEqual(5);
-      expect(typeof component.menuItems[0].category).toEqual('string');
-      expect(typeof component.menuItems[0].items[0].title).toEqual('string');
-      expect(typeof component.menuItems[0].items[0].anchor).toEqual('string');
-    }));
-  });
+			expect(component.menuItems).toEqual([]);
+		});
+
+		it('should get menu items when setMenuItems complete', fakeAsync(() => {
+			component.ngOnInit();
+			tick();
+
+			expect(component.menuItems.length).toEqual(5);
+			expect(typeof component.menuItems[0].category).toEqual('string');
+			expect(typeof component.menuItems[0].items[0].title).toEqual('string');
+			expect(typeof component.menuItems[0].items[0].anchor).toEqual('string');
+		}));
+	});
 });
