@@ -16,7 +16,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
       
-      - name: Set up Node.js
+      - name: Setup NodeJS
         uses: actions/setup-node@v2
         with:
           node-version: '20'
@@ -27,8 +27,11 @@ jobs:
       - name: Build application
         run: npm run build
 
-      - name: Eslint and Prettierrc
+      - name: ESLint and Prettierrc
         run: npm run lint
+      
+      - name: Stylelint
+        run: npm run stylelint
 
-      - name: Run tests
+      - name: Unit Test
         run: npm run test:ci
