@@ -9,7 +9,6 @@ import { MatListModule } from '@angular/material/list';
 	standalone: true,
 	imports: [CommonModule, RouterModule, MatListModule],
 	templateUrl: './side-menu.component.html',
-	styleUrl: './side-menu.component.scss',
 })
 export class SideMenuComponent implements OnInit {
 	menuItems: MenuItem[] = [];
