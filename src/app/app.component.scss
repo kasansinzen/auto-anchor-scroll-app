@@ -1,0 +1,19 @@
+.app {
+  // display: flex;
+
+  &__side-menu {
+    width: 20%;
+    position: sticky;
+    top: 0;
+    height: 100vh; /* Sidebar takes up full height of the viewport */
+    overflow-y: auto; /* Allow sidebar content to be scrollable if it exceeds viewport height */
+    padding: 20px;
+  }
+  
+  &__main-page {
+    width: 80%;
+    flex: 1;
+    overflow-y: auto; /* Allow main content to be scrollable */
+    padding: 20px;
+  }
+}
